@@ -55,7 +55,7 @@ RSpec.describe 'POST /api/articles/:id/comments', type: :request do
         end
 
         it 'returns an error message' do
-          expect(response_json['message']).to eq "Content can't be blank."
+          expect(response_json['message']).to eq "Content can't be blank"
         end
       end
     end

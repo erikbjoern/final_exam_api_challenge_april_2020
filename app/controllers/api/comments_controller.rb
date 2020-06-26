@@ -3,9 +3,10 @@ class Api::CommentsController < ApplicationController
 
   def create
     comment = Comment.create(content: params[:content], article_id: params[:article_id])
-    binding.pry
     if comment.persisted?
       render json: { message: "Your comment was successfully posted" }
+    else
+      render json: { message: comment.errors.full_messages.to_sentence }, status: 422
     end
   end
 end
