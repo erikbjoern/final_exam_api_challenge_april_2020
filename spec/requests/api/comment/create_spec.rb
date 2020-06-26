@@ -37,7 +37,7 @@ RSpec.describe 'POST /api/articles/:id/comments', type: :request do
         end
 
         it 'returns an error message' do
-          expect(response_json['message']).to eq "You need to log in or sign up to proceed!"
+          expect(response_json['errors'][0]).to eq "You need to sign in or sign up before continuing."
         end
       end
 
